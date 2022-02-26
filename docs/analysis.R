@@ -17,7 +17,7 @@ black_highest_state <- inc_data %>%
   ) %>%
   select(state, black_jail_pop)
 state_highest_black_total <- filter(black_highest_state, black_jail_pop == max(black_jail_pop))
-#print(state_highest_black_total)
+print(state_highest_black_total)
 
 #In which year was the black jail population the highest in US?
 
