@@ -1,1 +1,81 @@
+---
+title: "Assignment 3"
+author: "Suraj Gangaram"
+date: "2/25/2022"
+output: html_document
+---
+
+```{r}
+source("analysis.R")
+```
+
+# Introduction
+
+Through analyzing the incarceration data from the past five decades, I have computed
+five summary statistics. For the most part, I am focusing on the incarceration
+levels regarding the black population with respect to different contexts (year, 
+state, etc.).The **first** one is the state with the largest amount of incarcerations
+in the most recent year of the dataset, the year 2018. The **second** statistic 
+refers to which individual year the black jail population was the highest in the 
+country. The **third** one explores the ratio of the black population in Georgia 
+during 2018 to that of the black jail population in Georgia in 2018. The **fourth** 
+one is the ratio of the black jail population in 2018 to that of the total population nationwide in 2018. The **fifth** one dives into the race which had been the most incarcerated in 2018.
+
+## Questions
+
+**Q1**: Which _state_ had the largest amount of black citizens in jail in 2018?
+**A1**: The state and population (state, population) is `r state_highest_black_total`.
+
+**Q2**: In which _year_ was the black jail population the highest in US?
+**A2**: The year and population (year, population) `r year_highest_black_total`.
+
+**Q3**: What is the _ratio_ of the black population (from ages 15-64) in Georgia 
+in 2018 to the black jail population in Georgia in 2018?
+**A3**: The ratio is `r black_ratio_2018`.
+
+**Q4**: Which was the _most_ incarcerated _race_ in 2018?
+**A4**: The race and population (race, population) is `r race_most_incarcerated_data`.
+
+**Q5**: What is the _ratio_ of the black jail population nationwide in 2018 to
+the total population nationwide in 2018?
+**A5**: The ratio is `r black_country_ratio_2018`.
+
+## Plots: Line Chart
+
+```{r line_chart, echo=FALSE}
+plot(line_chart)
+```
+
+I included this chart in order to visualize the differences in incarceration among
+all of the major races denoted in the dataset. I decided to put the jail population
+as the y-variable and the year as the x-variable to take note of the incarceration
+population trends for each race throughout the years. I was surprised to find that 
+blacks, which typically is the race associated with high incarceration _rates_, had relatively low jail populations.
+
+## Plots: Scatterplot
+
+```{r scatter_chart, echo=FALSE}
+plot(scatter_chart)
+```
+
+I included this plot in order to visualize one of the variables in the 3rd question
+(black jail population of Georgia) so the viewer can understand the trend of the 
+black jail population throughout the years. It seems like that the dataset only 
+included data on the black jail population of Georgia from 1985 onwards, and the 
+population peaked in around 2009, the year when President Obama was inaugurated
+(which makes me wonder if there is a correlation between the two as the amount of
+black people in Georgia jails dwindles from there).
+
+## Plots: Map
+
+```{r black_map, echo=FALSE}
+plot(black_map)
+```
+
+I included this map in order to visualize the black jail population in 2018 (which
+is part of the 5th question) so the viewer can understand how many black people
+were incarcerated in each state. The states with high black populations (California,
+Texas, Georgia, etc.) have the highest black jail population. The converse seems
+true with states such as Vermont and Delaware with a small black population having 
+little to no black jail population.
 
